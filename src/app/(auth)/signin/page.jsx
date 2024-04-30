@@ -1,5 +1,7 @@
+import SignInPage from "@/templates/SignInPage";
+
 const page = () => {
-  return <div></div>;
+  return <SignInPage />;
 };
 
 export default page;

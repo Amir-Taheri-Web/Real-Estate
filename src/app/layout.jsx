@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Layout from "@/layout/Layout";
 
 const vazir = localFont({
   src: [
@@ -35,7 +36,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={vazir.className}>{children}</body>
+      <body className={vazir.className}>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }

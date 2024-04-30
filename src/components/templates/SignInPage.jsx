@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import { FaUnlockAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import styles from "@/styles/SignInPage.module.css";
+import { signIn } from "next-auth/react";
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
@@ -18,6 +19,19 @@ const SignInPage = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    const res = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    if (res.error) {
+      toast.error(res.error);
+    } else {
+      toast.success("ورود انجام شد");
+      router.replace("/dashboard");
+    }
   };
 
   return (

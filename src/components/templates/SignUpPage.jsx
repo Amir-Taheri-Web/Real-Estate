@@ -122,7 +122,8 @@ const SignUpPage = () => {
       </form>
 
       <p>
-        قبلا ثبت نام کردید؟ <Link href="/signin">ورود</Link>
+        <span>حساب کاربری دارید؟ </span>
+        <Link href="/signin">ورود</Link>
       </p>
 
       <Toaster />

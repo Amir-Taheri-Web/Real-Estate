@@ -9,3 +9,73 @@
   color: var(--color4);
   font-size: 2rem;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border: 3px solid var(--color4);
+  border-radius: 30px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.wrapper div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wrapper input {
+  width: 25rem;
+  padding: 0.5rem;
+  font-size: 1.02rem;
+  color: var(--color-text);
+  outline: none;
+  border: none;
+  border: 1px dashed var(--color4);
+  border-radius: 10px;
+}
+
+.wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color3);
+}
+
+.form button {
+  background-color: var(--color4);
+  color: var(--color-white);
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.form button:hover {
+    background-color: var(--color3);
+}
+
+.container p {
+    font-size: 1.1rem;
+    color: var(--color4);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container p a {
+    color: var(--color3);
+    border-bottom: 3px solid var(--color4);
+    margin-bottom: .5rem;
+}

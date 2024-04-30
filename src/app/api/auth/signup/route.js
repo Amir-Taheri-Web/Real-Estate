@@ -1,6 +1,7 @@
 import User from "@/models/User";
 import { hashPassword } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
+import { e2p } from "@/utils/convert";
 import { validateEmail, validatePassword } from "@/utils/validate";
 import { NextResponse } from "next/server";
 
@@ -33,8 +34,9 @@ const POST = async (req) => {
       return NextResponse.json({
         code: 422,
         status: "failure",
-        message:
-          "رمز عبور باید حداقل 8 کاراکتر با حروف کوچک و بزرگ و عدد و یک حرف خاص باشد",
+        message: e2p(
+          "رمز عبور باید لاتین، حداقل 8 کاراکتر با حروف کوچک و بزرگ، عدد و یک حرف خاص باشد"
+        ),
       });
 
     const user = await User.findOne({ email });

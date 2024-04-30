@@ -31,21 +31,15 @@ const authOptions = {
             )
           );
 
-        try {
-          const user = await User.findOne({ email });
+        const user = await User.findOne({ email });
 
-          if (!user) throw new Error("کاربری با این مشخضات وجود ندارد");
+        if (!user) throw new Error("کاربری با این مشخصات وجود ندارد");
 
-          const isPasswordValid = await verifyPassword(password, user.password);
+        const isPasswordValid = await verifyPassword(password, user.password);
 
-          if (!isPasswordValid) throw new Error("ایمیل یا رمز عبور اشتباه است");
+        if (!isPasswordValid) throw new Error("ایمیل یا رمز عبور اشتباه است");
 
-          return { email };
-        } catch (error) {
-          console.log(error);
-
-          throw new Error("مشکلی در ارتباط با سرور به وجود آمده");
-        }
+        return { email };
       },
     }),
   ],

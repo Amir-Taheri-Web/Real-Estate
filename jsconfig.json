@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/app/*": ["/src/app/*"],
+      "@/api/*": ["/src/app/api/*"],
       "@/modules/*": ["/src/components/modules/*"],
       "@/templates/*": ["/src/components/templates/*"],
       "@/constants/*": ["/src/constants/*"],

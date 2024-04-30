@@ -58,7 +58,7 @@ const POST = async (req) => {
 
     NextResponse.json({
       code: 201,
-      status: "failure",
+      status: "success",
       message: "ثبت نام انجام شد",
     });
   } catch (error) {

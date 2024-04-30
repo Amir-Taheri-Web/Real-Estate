@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import { FaUser, FaUnlockAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import styles from "@/styles/SignUpPage.module.css";
+import Loader from "@/modules/Loader";
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -16,11 +17,13 @@ const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     if (password.trim() !== rePassword.trim())
       return toast.error("رمز عبور با تکرار رمز عبور برابر نیست");
@@ -32,6 +35,8 @@ const SignUpPage = () => {
     });
 
     const data = await res.json();
+
+    setIsLoading(false);
 
     if (data.status === "success") {
       toast.success(data.message);
@@ -118,7 +123,7 @@ const SignUpPage = () => {
           </div>
         </div>
 
-        <button type="submit">ثبت نام</button>
+        {isLoading ? <Loader /> : <button type="submit">ورود</button>}
       </form>
 
       <p>

@@ -1,6 +1,5 @@
 "use client";
 
-import { e2p } from "@/utils/convert";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -10,21 +9,26 @@ import { FaUnlockAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import styles from "@/styles/SignInPage.module.css";
 import { signIn } from "next-auth/react";
+import Loader from "@/modules/Loader";
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const res = await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
+
+    setIsLoading(false);
 
     if (res.error) {
       toast.error(res.error);
@@ -69,7 +73,7 @@ const SignInPage = () => {
           </div>
         </div>
 
-        <button type="submit">ورود</button>
+        {isLoading ? <Loader /> : <button type="submit">ورود</button>}
       </form>
 
       <p>

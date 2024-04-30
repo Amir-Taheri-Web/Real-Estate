@@ -10,11 +10,13 @@ import { IoMdMail } from "react-icons/io";
 import styles from "@/styles/SignInPage.module.css";
 import { signIn } from "next-auth/react";
 import Loader from "@/modules/Loader";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   const router = useRouter();
 
@@ -64,12 +66,19 @@ const SignInPage = () => {
               رمز عبور
             </label>
             <input
-              type="password"
+              type={isPasswordShown ? "text" : "password"}
+              autoComplete="off"
               id="password"
               placeholder="SomeThing$1234"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            <span
+              type="button"
+              onClick={() => setIsPasswordShown(!isPasswordShown)}
+            >
+              {isPasswordShown ? <IoEye /> : <IoEyeOff />}
+            </span>
           </div>
         </div>
 

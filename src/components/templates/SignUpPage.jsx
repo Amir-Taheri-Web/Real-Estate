@@ -10,6 +10,7 @@ import { FaUser, FaUnlockAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import styles from "@/styles/SignUpPage.module.css";
 import Loader from "@/modules/Loader";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -18,6 +19,7 @@ const SignUpPage = () => {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   const router = useRouter();
 
@@ -100,12 +102,19 @@ const SignUpPage = () => {
               رمز عبور
             </label>
             <input
-              type="password"
+              type={isPasswordShown ? "text" : "password"}
+              autoComplete="off"
               id="password"
               placeholder="SomeThing$1234"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            <span
+              type="button"
+              onClick={() => setIsPasswordShown(!isPasswordShown)}
+            >
+              {isPasswordShown ? <IoEye /> : <IoEyeOff />}
+            </span>
           </div>
 
           <div>
@@ -114,12 +123,19 @@ const SignUpPage = () => {
               تکرار رمز عبور
             </label>
             <input
-              type="password"
+              type={isPasswordShown ? "text" : "password"}
+              autoComplete="off"
               id="rePassword"
               placeholder="SomeThing$1234"
               value={rePassword}
               onChange={(e) => setRePassword(e.target.value)}
             />
+            <span
+              type="button"
+              onClick={() => setIsPasswordShown(!isPasswordShown)}
+            >
+              {isPasswordShown ? <IoEye /> : <IoEyeOff />}
+            </span>
           </div>
         </div>
 

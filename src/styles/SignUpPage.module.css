@@ -30,6 +30,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: relative;
 }
 
 .wrapper input {
@@ -62,20 +63,29 @@
 }
 
 .form button:hover {
-    background-color: var(--color3);
+  background-color: var(--color3);
 }
 
 .container p {
-    font-size: 1.1rem;
-    color: var(--color4);
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  font-size: 1.1rem;
+  color: var(--color4);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .container p a {
-    color: var(--color3);
-    border-bottom: 3px solid var(--color4);
-    margin-bottom: .5rem;
+  color: var(--color3);
+  border-bottom: 3px solid var(--color4);
+  margin-bottom: 0.5rem;
+}
+
+.wrapper div span {
+  position: absolute;
+  left: 0.7rem;
+  top: 2.6rem;
+  color: var(--color3);
+  font-size: 1.4rem;
+  cursor: pointer;
 }

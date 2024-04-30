@@ -56,7 +56,7 @@ const POST = async (req) => {
     });
     console.log(newUser);
 
-    NextResponse.json({
+    return NextResponse.json({
       code: 201,
       status: "success",
       message: "ثبت نام انجام شد",

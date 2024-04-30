@@ -4,10 +4,10 @@
   line-height: 1.3;
 
   /* colors */
-  --color1: #fffbf5;
-  --color2: #f7efe5;
-  --color3: #c3acd0;
-  --color4: #7743db;
+  --color1: #F0ECE5;
+  --color2: #B6BBC4;
+  --color3: #31304D;
+  --color4: #161A30;
   --color-text: #2c2c2c;
   --color-black: #000000;
   --color-white: #ffffff;
@@ -97,6 +97,26 @@ body {
   max-width: 1500px;
   min-height: 100vh;
   padding: 3rem 1rem; */
-  background-color: inherit;
+  background-color: var(--color1);
 }
 /* CSS RESET END */
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color3);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color4);
+}

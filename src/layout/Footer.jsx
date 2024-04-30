@@ -1,16 +1,16 @@
+import { FaGithub } from "react-icons/fa";
+import styles from "@/styles/Footer.module.css";
+
 const Footer = () => {
   return (
-    <footer>
-      <p>
-        Created by Amir Taheri -{" "}
+    <footer className={styles.footer}>
         <a
           href="https://github.com/Amir-Taheri-Web"
           target="_blank"
           rel="noreferrer"
         >
-          GitHub
+          <FaGithub /> Created by Amir Taheri
         </a>
-      </p>
     </footer>
   );
 };

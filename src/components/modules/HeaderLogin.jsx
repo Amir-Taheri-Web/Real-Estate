@@ -9,19 +9,20 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 
 const HeaderLogin = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loginStatus, setloginStatus] = useState("unauthenticated");
 
   const { status } = useSession();
 
   useEffect(() => {
-    setIsLoggedIn(status === "authenticated" ? true : false);
+    if (status === "loading" || status === loginStatus) return;
+    setloginStatus(status);
   }, [status]);
 
   return (
     <div className={styles.container}>
       {status === "loading" ? (
         <Loader color={"#ffffff"} width="50" height="50" />
-      ) : isLoggedIn ? (
+      ) : loginStatus === "authenticated" ? (
         <button type="button" className={styles.dashboardButton}>
           <Link href="/dashboard">
             <FaUserCircle />

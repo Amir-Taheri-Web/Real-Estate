@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { PiSignInBold } from "react-icons/pi";
@@ -9,13 +10,13 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 
 const HeaderLogin = () => {
-  const [loginStatus, setloginStatus] = useState("unauthenticated");
+  const [loginStatus, setLoginStatus] = useState("unauthenticated");
 
   const { status } = useSession();
 
   useEffect(() => {
     if (status === "loading" || status === loginStatus) return;
-    setloginStatus(status);
+    setLoginStatus(status);
   }, [status]);
 
   return (

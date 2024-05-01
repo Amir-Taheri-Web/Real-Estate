@@ -37,6 +37,7 @@ const SignInPage = () => {
     } else {
       toast.success("ورود انجام شد");
       router.replace("/dashboard");
+      router.refresh();
     }
   };
 

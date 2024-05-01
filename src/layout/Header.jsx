@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { PiSignInBold } from "react-icons/pi";
 import styles from "@/styles/Header.module.css";
+import HeaderLogin from "@/modules/HeaderLogin";
 
-const Header = () => {
+const Header = async () => {
   return (
     <header className={styles.header}>
       <div>
@@ -20,12 +20,7 @@ const Header = () => {
           </li>
         </ul>
 
-        <button type="button">
-          <Link href="/signin">
-            <PiSignInBold />
-            ورود/ثبت نام
-          </Link>
-        </button>
+        <HeaderLogin />
       </div>
     </header>
   );

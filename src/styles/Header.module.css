@@ -8,7 +8,7 @@
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-.header div {
+.header > div {
   display: flex;
   justify-content: space-between;
   max-width: 1800px;
@@ -30,26 +30,14 @@
   font-weight: 400;
 }
 
-.header button {
-  background: none;
-  color: var(--color-white);
-  font-size: 1.2rem;
-}
-
-.header button a {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.header button a svg {
-  font-size: 1.4rem;
-}
-
 .header a {
   transition: all 0.2s ease-in;
 }
 
 .header a:hover {
   color: var(--color2);
+}
+
+.dashboardButton a svg {
+  font-size: 2.3rem !important;
 }

@@ -1,5 +1,6 @@
 import "./globals.css";
 import Layout from "@/layout/Layout";
+import SessionProviders from "@/providers/SessionProviders";
 import { vazir } from "@/utils/fonts";
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body className={vazir.className}>
-        <Layout>{children}</Layout>
+        <SessionProviders>
+          <Layout>{children}</Layout>
+        </SessionProviders>
       </body>
     </html>
   );

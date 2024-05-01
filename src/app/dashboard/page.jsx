@@ -1,5 +1,7 @@
+import DashboardPage from "@/templates/DashboardPage";
+
 const Dashboard = () => {
-  return <div>dashboard</div>;
+  return <DashboardPage />;
 };
 
 export default Dashboard;

@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  height: 100%;
+}
+
+.container h2 {
+  font-size: 2rem;
+  color: var(--color3);
+}
+
+.container p {
+  font-size: 1.2rem;
+  color: var(--color3);
+  font-weight: 400;
+}
+
+.container p span {
+  background-color: var(--color4);
+  color: var(--color-white);
+  padding: .5rem 1rem;
+  border-radius: 20px;
+}

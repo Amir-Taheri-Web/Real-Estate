@@ -6,43 +6,47 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { BsHousesFill } from "react-icons/bs";
 import { BsFillHouseAddFill } from "react-icons/bs";
 
-const DashboardSideBar = ({ email, firstName, lastName }) => {
+const DashboardSideBar = ({ children, email, firstName, lastName }) => {
   return (
-    <aside className={styles.container}>
-      <div className={styles.header}>
-        <span>
-          <FaUserCircle />
-        </span>
+    <div className={styles.wrapper}>
+      <aside className={styles.container}>
+        <div className={styles.header}>
+          <span>
+            <FaUserCircle />
+          </span>
 
-        <h5>{`${firstName} ${lastName}`}</h5>
-        <p>{email}</p>
-      </div>
+          <h5>{`${firstName} ${lastName}`}</h5>
+          <p>{email}</p>
+        </div>
 
-      <ul className={styles.links}>
-        <li>
-          <Link href="/dashboard">
-            <MdSpaceDashboard />
-            داشبورد
-          </Link>
-        </li>
+        <ul className={styles.links}>
+          <li>
+            <Link href="/dashboard">
+              <MdSpaceDashboard />
+              داشبورد
+            </Link>
+          </li>
 
-        <li>
-          <Link href="/dashboard/my-profiles">
-            <BsHousesFill />
-            آگهی های من
-          </Link>
-        </li>
+          <li>
+            <Link href="/dashboard/my-profiles">
+              <BsHousesFill />
+              آگهی های من
+            </Link>
+          </li>
 
-        <li>
-          <Link href="/dashboard/add-profile">
-            <BsFillHouseAddFill />
-            ثبت آگهی
-          </Link>
-        </li>
-      </ul>
+          <li>
+            <Link href="/dashboard/add-profile">
+              <BsFillHouseAddFill />
+              ثبت آگهی
+            </Link>
+          </li>
+        </ul>
 
-      <SignOut />
-    </aside>
+        <SignOut />
+      </aside>
+
+      <div>{children}</div>
+    </div>
   );
 };
 

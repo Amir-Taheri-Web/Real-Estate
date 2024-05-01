@@ -59,3 +59,8 @@
 .links a svg {
   font-size: 1.2rem;
 }
+
+.wrapper {
+  display: flex;
+  gap: 6rem;
+}

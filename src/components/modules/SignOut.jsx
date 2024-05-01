@@ -3,6 +3,8 @@
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import styles from "@/styles/SignOut.module.css";
+import { BsFillDoorOpenFill } from "react-icons/bs";
 
 const SignOut = () => {
   const router = useRouter();
@@ -15,8 +17,9 @@ const SignOut = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <button type="button" onClick={signOutHandler}>
+        <BsFillDoorOpenFill />
         خروج از حساب کاربری
       </button>
     </div>

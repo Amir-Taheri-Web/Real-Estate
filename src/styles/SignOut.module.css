@@ -1,0 +1,23 @@
+.container button {
+  background: none;
+  color: var(--color-red);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  transition: all 0.2s ease-in;
+}
+
+.container button:hover {
+  transform: scale(1.1);
+}
+
+.container button svg {
+  font-size: 1.1rem;
+}
+
+.container {
+  align-self: center;
+}

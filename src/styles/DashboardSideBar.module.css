@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 30px;
+  width: 300px;
+  border: 1px dashed var(--color4);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-text);
+}
+
+.header span svg {
+  font-size: 4rem;
+  color: var(--color3);
+}
+
+.header h5 {
+  font-size: 1.3rem;
+  color: var(--color4);
+}
+
+.header p {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color3);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-text);
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease-in;
+}
+
+.links a:hover {
+  transform: scale(1.1);
+}
+
+.links a svg {
+  font-size: 1.2rem;
+}

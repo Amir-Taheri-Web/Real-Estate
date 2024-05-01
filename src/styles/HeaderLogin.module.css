@@ -1,5 +1,9 @@
 .container {
-    width: fit-content;
+  width: 150px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .container button {

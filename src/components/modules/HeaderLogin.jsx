@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import styles from "@/styles/HeaderLogin.module.css";
 import { useEffect, useState } from "react";
+import Loader from "./Loader";
 
 const HeaderLogin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,7 +19,9 @@ const HeaderLogin = () => {
 
   return (
     <div className={styles.container}>
-      {isLoggedIn ? (
+      {status === "loading" ? (
+        <Loader color={"#ffffff"} width="50" height="50" />
+      ) : isLoggedIn ? (
         <button type="button" className={styles.dashboardButton}>
           <Link href="/dashboard">
             <FaUserCircle />

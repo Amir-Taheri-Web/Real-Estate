@@ -2,6 +2,7 @@ import "./globals.css";
 import Layout from "@/layout/Layout";
 import SessionProviders from "@/providers/SessionProviders";
 import { vazir } from "@/utils/fonts";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "املاک",
@@ -16,6 +17,8 @@ export default function RootLayout({ children }) {
         <SessionProviders>
           <Layout>{children}</Layout>
         </SessionProviders>
+
+        <Toaster />
       </body>
     </html>
   );

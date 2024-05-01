@@ -146,8 +146,6 @@ const SignUpPage = () => {
         <span>حساب کاربری دارید؟ </span>
         <Link href="/signin">ورود</Link>
       </p>
-
-      <Toaster />
     </div>
   );
 };

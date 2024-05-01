@@ -89,8 +89,6 @@ const SignInPage = () => {
         <span>حساب کاربری ندارید؟ </span>
         <Link href="/signup">ثبت نام</Link>
       </p>
-
-      <Toaster />
     </div>
   );
 };

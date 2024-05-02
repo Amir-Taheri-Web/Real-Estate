@@ -13,7 +13,7 @@ const validatePassword = (password) => {
 const validateNumber = (number) => {
   var re = /^\d+$/;
 
-  return re.test(number.toString());
+  return re.test(String(number));
 };
 
 export { validateEmail, validatePassword, validateNumber };

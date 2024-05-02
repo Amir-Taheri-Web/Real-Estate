@@ -17,7 +17,7 @@ const AddProfilePage = () => {
     realEstate: "",
     price: "",
     category: "villa",
-    constructionDate: "",
+    constructionDate: Date.now(),
     amenities: [],
     rules: [],
     images: {},
@@ -52,7 +52,7 @@ const AddProfilePage = () => {
 
         <CategoriesRadio profile={profile} setProfile={setProfile} />
 
-        <DateInput />
+        <DateInput profile={profile} setProfile={setProfile} />
 
         <ListInputs
           type="amenities"

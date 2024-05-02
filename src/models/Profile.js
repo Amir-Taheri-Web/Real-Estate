@@ -49,7 +49,11 @@ const profileSchema = new Schema({
   images: {},
 
   userId: {
-    type: new Schema.Types.ObjectId,
+    type: new Schema.Types.ObjectId(),
     ref: "User",
   },
 });
+
+const Profile = models.Profile || model("Profile", profileSchema);
+
+export default Profile;

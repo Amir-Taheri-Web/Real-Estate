@@ -13,6 +13,7 @@
 
 .container input {
   width: 130px;
+  height: 40px;
   padding: 1rem;
   font-size: 1.05rem;
   outline: none;

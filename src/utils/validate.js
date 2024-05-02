@@ -10,4 +10,10 @@ const validatePassword = (password) => {
   return re.test(password.toString());
 };
 
-export { validateEmail, validatePassword };
+const validateNumber = (number) => {
+  var re = /^\d+$/;
+
+  return re.test(number.toString());
+};
+
+export { validateEmail, validatePassword, validateNumber };

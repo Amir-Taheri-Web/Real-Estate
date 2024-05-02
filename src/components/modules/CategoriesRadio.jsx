@@ -8,7 +8,7 @@ const CategoriesRadio = ({ profile, setProfile }) => {
 
   return (
     <div className={styles.container}>
-      <label htmlFor="categories">دسته بندی:</label>
+      <label htmlFor="categories">دسته بندی(اجباری):</label>
       <div>
         {Object.keys(categories).map((item) => (
           <div key={item}>

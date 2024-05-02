@@ -4,7 +4,7 @@ const profileStrings = {
   location: "شهر",
   phone: "شماره تماس",
   realEstate: "بنگاه",
-  price: "قیمت",
+  price: "قیمت(تومان)",
 };
 
 const categories = {

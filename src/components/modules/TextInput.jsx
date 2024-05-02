@@ -4,7 +4,7 @@ import styles from "@/styles/TextInput.module.css"
 const TextInput = ({ placeholder, name, value, changeHandler }) => {
   return (
     <div className={styles.container}>
-      <label htmlFor={name}>{placeholder}:</label>
+      <label htmlFor={name}>{placeholder}(اجباری):</label>
 
       {name === "description" && (
         <textarea

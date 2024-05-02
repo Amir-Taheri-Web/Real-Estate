@@ -12,7 +12,7 @@ const DateInput = ({ profile, setProfile }) => {
 
   return (
     <div className={styles.container}>
-      <label htmlFor="date">تاریخ ساخت:</label>
+      <label htmlFor="date">تاریخ ساخت(اجباری):</label>
 
       <DatePicker
         id="date"

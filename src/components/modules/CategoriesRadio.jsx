@@ -8,7 +8,8 @@ const CategoriesRadio = ({ profile, setProfile }) => {
   console.log(profile.category);
 
   return (
-    <>
+    <div>
+      <label htmlFor="categories">دسته بندی:</label>
       {Object.keys(categories).map((item) => (
         <div key={item}>
           <input
@@ -22,7 +23,7 @@ const CategoriesRadio = ({ profile, setProfile }) => {
           <label htmlFor={item}>{categories[item]}</label>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

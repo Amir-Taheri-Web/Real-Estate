@@ -9,7 +9,7 @@ const TextInput = ({
 }) => {
   return (
     <div>
-      <label htmlFor={name}>{placeholder}</label>
+      <label htmlFor={name}>{placeholder}:</label>
       {textArea ? (
         <textArea
           value={e2p(value[name])}

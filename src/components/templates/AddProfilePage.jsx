@@ -2,11 +2,9 @@
 
 import { profileStrings } from "@/constants/profile";
 import CategoriesRadio from "@/modules/CategoriesRadio";
+import DateInput from "@/modules/DateInput";
 import TextInput from "@/modules/TextInput";
 import { useState } from "react";
-import DatePicker from "react-multi-date-picker";
-import persian from "react-date-object/calendars/persian";
-import persian_fa from "react-date-object/locales/persian_fa";
 
 const AddProfilePage = () => {
   const [profile, setProfile] = useState({
@@ -46,11 +44,7 @@ const AddProfilePage = () => {
 
         <CategoriesRadio profile={profile} setProfile={setProfile} />
 
-        <DatePicker
-          calendar={persian}
-          locale={persian_fa}
-          calendarPosition="bottom-right"
-        />
+        <DateInput />
       </form>
     </div>
   );

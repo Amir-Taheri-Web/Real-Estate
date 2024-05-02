@@ -47,10 +47,8 @@ const profileSchema = new Schema(
 
     rules: [String],
 
-    images: {},
-
     userId: {
-      type: new Schema.Types.ObjectId(),
+      type: Schema.Types.ObjectId,
       ref: "User",
     },
   },

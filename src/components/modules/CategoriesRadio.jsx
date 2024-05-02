@@ -5,8 +5,6 @@ const CategoriesRadio = ({ profile, setProfile }) => {
     setProfile((profile) => ({ ...profile, category: e.target.value }));
   };
 
-  console.log(profile.category);
-
   return (
     <div>
       <label htmlFor="categories">دسته بندی:</label>

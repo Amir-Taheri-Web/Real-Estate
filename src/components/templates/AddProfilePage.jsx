@@ -3,6 +3,8 @@
 import { profileStrings } from "@/constants/profile";
 import CategoriesRadio from "@/modules/CategoriesRadio";
 import DateInput from "@/modules/DateInput";
+import ImageInput from "@/modules/ImageInput";
+import ListInputs from "@/modules/ListInputs";
 import TextInput from "@/modules/TextInput";
 import { useState } from "react";
 
@@ -18,7 +20,7 @@ const AddProfilePage = () => {
     constructionDate: "",
     amenities: [],
     rules: [],
-    images: [],
+    images: {},
   });
 
   const changeHandler = (e) => {
@@ -27,11 +29,17 @@ const AddProfilePage = () => {
     setProfile((profile) => ({ ...profile, [name]: value }));
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    console.log(profile);
+  };
+
   return (
     <div>
       <h2>ثبت آگهی</h2>
 
-      <form>
+      <form onSubmit={submitHandler}>
         {Object.keys(profileStrings).map((item) => (
           <TextInput
             key={item}
@@ -45,6 +53,18 @@ const AddProfilePage = () => {
         <CategoriesRadio profile={profile} setProfile={setProfile} />
 
         <DateInput />
+
+        <ListInputs
+          type="amenities"
+          profile={profile}
+          setProfile={setProfile}
+        />
+
+        <ListInputs type="rules" profile={profile} setProfile={setProfile} />
+
+        <ImageInput setProfile={setProfile} />
+
+        <button type="submit">ثبت</button>
       </form>
     </div>
   );

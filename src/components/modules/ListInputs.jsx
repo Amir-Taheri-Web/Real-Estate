@@ -1,5 +1,6 @@
 import { MdDeleteForever } from "react-icons/md";
 import { MdAddCircle } from "react-icons/md";
+import styles from "@/styles/ListInputs.module.css";
 
 const ListInputs = ({ type, profile, setProfile }) => {
   const addHandler = () => {
@@ -21,7 +22,7 @@ const ListInputs = ({ type, profile, setProfile }) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <label htmlFor={type}>
         {type === "rules" ? "قوانین" : "امکانات رفاهی"}:
       </label>
@@ -31,19 +32,20 @@ const ListInputs = ({ type, profile, setProfile }) => {
         افزودن
       </button>
 
-      {profile[type].map((item, index) => (
-        <div key={index}>
-          <input
-            type="text"
-            value={item}
-            onChange={(e) => changeHandler(e, index)}
-          />
-          <button type="button" onClick={() => deleteHandler(index)}>
-            <MdDeleteForever />
-            حذف
-          </button>
-        </div>
-      ))}
+      <div className={styles.wrapper}>
+        {profile[type].map((item, index) => (
+          <div key={index}>
+            <input
+              type="text"
+              value={item}
+              onChange={(e) => changeHandler(e, index)}
+            />
+            <button type="button" onClick={() => deleteHandler(index)}>
+              <MdDeleteForever />
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

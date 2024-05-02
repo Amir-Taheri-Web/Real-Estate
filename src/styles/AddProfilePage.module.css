@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.container h2 {
+  font-size: 1.7rem;
+  color: var(--color3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.container form > button {
+  background-color: var(--color4);
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  color: var(--color-white);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.container form > button:hover {
+  background-color: var(--color3);
+}

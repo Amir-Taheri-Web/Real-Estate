@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color4);
+}
+
+.container input,
+.container textarea {
+  width: 25rem;
+  padding: 0.5rem;
+  font-size: 1.05rem;
+  outline: none;
+  border: 1px dashed var(--color4);
+  border-radius: 10px;
+  color: var(--color4);
+  /* background-color: var(--color1); */
+}
+
+.container textarea {
+  resize: vertical;
+  height: 100px;
+}

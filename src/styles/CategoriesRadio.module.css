@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container > label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color4);
+}
+
+.container > div {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.container div label {
+  font-size: 1.1rem;
+  color: var(--color3);
+  padding-right: 0.5rem;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.container div input {
+  transform: scale(1.1);
+  cursor: pointer;
+  accent-color: var(--color3);
+}

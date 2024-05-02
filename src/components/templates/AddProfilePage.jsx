@@ -7,6 +7,8 @@ import ImageInput from "@/modules/ImageInput";
 import ListInputs from "@/modules/ListInputs";
 import TextInput from "@/modules/TextInput";
 import { useState } from "react";
+import styles from "@/styles/AddProfilePage.module.css";
+import { BsFillHouseAddFill } from "react-icons/bs";
 
 const AddProfilePage = () => {
   const [profile, setProfile] = useState({
@@ -36,8 +38,11 @@ const AddProfilePage = () => {
   };
 
   return (
-    <div>
-      <h2>ثبت آگهی</h2>
+    <div className={styles.container}>
+      <h2>
+        <BsFillHouseAddFill />
+        ثبت آگهی
+      </h2>
 
       <form onSubmit={submitHandler}>
         {Object.keys(profileStrings).map((item) => (

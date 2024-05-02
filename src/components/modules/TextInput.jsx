@@ -1,16 +1,17 @@
 import { e2p } from "@/utils/convert";
+import styles from "@/styles/TextInput.module.css"
 
 const TextInput = ({ placeholder, name, value, changeHandler }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <label htmlFor={name}>{placeholder}:</label>
 
       {name === "description" && (
-        <textArea
+        <textarea
           value={e2p(value[name])}
           name={name}
           onChange={changeHandler}
-        ></textArea>
+        ></textarea>
       )}
 
       {name !== "description" && (

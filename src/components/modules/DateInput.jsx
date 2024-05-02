@@ -1,6 +1,7 @@
 import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
+import styles from "@/styles/DateInput.module.css";
 
 const DateInput = ({ profile, setProfile }) => {
   const changeHandler = (e) => {
@@ -10,7 +11,7 @@ const DateInput = ({ profile, setProfile }) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <label htmlFor="date">تاریخ ساخت:</label>
 
       <DatePicker

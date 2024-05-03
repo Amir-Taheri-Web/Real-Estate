@@ -1,6 +1,7 @@
 import { categoriesIcons } from "@/constants/categories";
 import { e2p, sp } from "@/utils/convert";
 import { RiShareFill } from "react-icons/ri";
+import styles from "@/styles/ProfileDetailsPage.module.css";
 
 const ProfileDetailsPage = ({ profile }) => {
   const {
@@ -17,8 +18,8 @@ const ProfileDetailsPage = ({ profile }) => {
   } = profile;
 
   return (
-    <div>
-      <div>
+    <div className={styles.container}>
+      <div className={styles.content}>
         <h2>
           {categoriesIcons[category]} {title}
         </h2>
@@ -47,7 +48,7 @@ const ProfileDetailsPage = ({ profile }) => {
         </div>
       </div>
 
-      <div>
+      <div className={styles.details}>
         <p>
           <span>شهر: </span>
           {location}

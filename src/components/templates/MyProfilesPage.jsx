@@ -30,7 +30,10 @@ const MyProfilesPage = async () => {
   return (
     <div className={styles.container}>
       {user.profiles.map((profile) => (
-        <DashboardCard key={profile._id} profile={profile} />
+        <DashboardCard
+          key={profile._id}
+          profile={JSON.parse(JSON.stringify(profile))}
+        />
       ))}
     </div>
   );

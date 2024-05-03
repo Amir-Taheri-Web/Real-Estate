@@ -2,6 +2,7 @@ import ProfileCard from "./ProfileCard";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import styles from "@/styles/DashboardCard.module.css";
+import Link from "next/link";
 
 const DashboardCard = ({ profile }) => {
   return (
@@ -9,7 +10,9 @@ const DashboardCard = ({ profile }) => {
       <ProfileCard profile={profile} />
       <div className={styles.buttons}>
         <button type="button">
-          <FaEdit />
+          <Link href={`/dashboard/edit-profile/${profile._id}`}>
+            <FaEdit />
+          </Link>
         </button>
 
         <button type="button">

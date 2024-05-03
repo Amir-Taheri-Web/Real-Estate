@@ -8,12 +8,12 @@ import TextInput from "@/modules/TextInput";
 import styles from "@/styles/AddProfilePage.module.css";
 import { p2e } from "@/utils/convert";
 import { useState } from "react";
-import { BsFillHouseAddFill } from "react-icons/bs";
+import { BsFillHouseAddFill, BsFillHouseGearFill } from "react-icons/bs";
 import toast from "react-hot-toast";
 import Loader from "@/modules/Loader";
 
-const AddProfilePage = () => {
-  const [profile, setProfile] = useState(profileFields);
+const AddProfilePage = ({ edit, data }) => {
+  const [profile, setProfile] = useState(edit ? data : profileFields);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,7 +23,7 @@ const AddProfilePage = () => {
     setProfile((profile) => ({ ...profile, [name]: value }));
   };
 
-  const submitHandler = async (e) => {
+  const addHandler = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -53,14 +53,48 @@ const AddProfilePage = () => {
     }
   };
 
+  const editHandler = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const res = await fetch("/api/profile", {
+        method: "PATCH",
+        body: JSON.stringify({
+          ...profile,
+          phone: p2e(profile.phone),
+          price: p2e(profile.price),
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const data = await res.json();
+
+      if (data.status === "success") toast.success(data.message);
+      if (data.status === "failure") toast.error(data.message);
+
+      setIsLoading(false);
+    } catch (error) {
+      toast.error(error.message);
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <h2>
-        <BsFillHouseAddFill />
-        ثبت آگهی
-      </h2>
+      {edit ? (
+        <h2>
+          <BsFillHouseGearFill />
+          ویرایش آگهی
+        </h2>
+      ) : (
+        <h2>
+          <BsFillHouseAddFill />
+          ثبت آگهی
+        </h2>
+      )}
 
-      <form onSubmit={submitHandler}>
+      <form onSubmit={edit ? editHandler : addHandler}>
         {Object.keys(profileStrings).map((item) => (
           <TextInput
             key={item}
@@ -86,7 +120,7 @@ const AddProfilePage = () => {
         {isLoading ? (
           <Loader height="43" />
         ) : (
-          <button type="submit">ثبت</button>
+          <button type="submit">{edit ? "ویرایش" : "ثبت"}</button>
         )}
       </form>
     </div>

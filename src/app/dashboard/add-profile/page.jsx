@@ -1,7 +1,7 @@
 import AddProfilePage from "@/templates/AddProfilePage";
 
 const AddProfile = () => {
-  return <AddProfilePage />;
+  return <AddProfilePage edit={false} />;
 };
 
 export default AddProfile;

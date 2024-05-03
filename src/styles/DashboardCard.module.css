@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 30px;
+  border: 1px dashed var(--color4);
+}
+
+.container button svg {
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.buttons button {
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+}
+
+.buttons button:first-of-type {
+  color: var(--color-edit);
+}
+
+.buttons button:last-of-type {
+  color: var(--color-red);
+  font-size: 1.7rem !important;
+}

@@ -1,12 +1,13 @@
 import ProfileCard from "./ProfileCard";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
+import styles from "@/styles/DashboardCard.module.css";
 
 const DashboardCard = ({ profile }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <ProfileCard profile={profile} />
-      <div>
+      <div className={styles.buttons}>
         <button type="button">
           <FaEdit />
         </button>

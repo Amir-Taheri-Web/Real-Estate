@@ -20,13 +20,6 @@ const profileStrings = {
   price: "قیمت(تومان)",
 };
 
-const categories = {
-  villa: "ویلا",
-  apartment: "آپارتمان",
-  store: "مغازه",
-  office: "دفتر",
-};
 
-const categoriesIcons = {};
 
-export { profileStrings, categories, profileFields };
+export { profileStrings, profileFields };

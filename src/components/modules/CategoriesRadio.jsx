@@ -1,4 +1,4 @@
-import { categories } from "@/constants/profile";
+import { categories } from "@/constants/categories";
 import styles from "@/styles/CategoriesRadio.module.css";
 
 const CategoriesRadio = ({ profile, setProfile }) => {

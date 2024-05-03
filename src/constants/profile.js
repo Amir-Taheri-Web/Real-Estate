@@ -1,3 +1,7 @@
+import { FaMapLocationDot } from "react-icons/fa6";
+import { FaCalendar } from "react-icons/fa";
+import { FaMoneyBillWave } from "react-icons/fa";
+
 const profileFields = {
   title: "",
   description: "",
@@ -20,6 +24,10 @@ const profileStrings = {
   price: "قیمت(تومان)",
 };
 
+const profileIcons = {
+  locationIcon: <FaMapLocationDot />,
+  dateIcon: <FaCalendar />,
+  priceIcon: <FaMoneyBillWave />,
+};
 
-
-export { profileStrings, profileFields };
+export { profileStrings, profileFields, profileIcons };

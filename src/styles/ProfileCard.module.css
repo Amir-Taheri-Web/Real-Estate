@@ -1,0 +1,53 @@
+.container {
+  background-color: var(--color-white);
+  padding: 1rem 2rem;
+  box-shadow: 3px 3px 10px var(--color-shadow);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.container span {
+  align-self: center;
+}
+
+.container span svg {
+  font-size: 1.7rem;
+  color: var(--color3);
+}
+
+.container h4 {
+  font-size: 1.1rem;
+  color: var(--color3);
+  align-self: center;
+}
+
+.container p {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-text);
+}
+
+.container a {
+  font-weight: 400;
+  color: var(--color-link);
+  transition: all 0.2s ease-in;
+}
+
+.container a:hover {
+  color: var(--color3);
+}

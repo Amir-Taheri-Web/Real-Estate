@@ -12,8 +12,8 @@ import { BsFillHouseAddFill, BsFillHouseGearFill } from "react-icons/bs";
 import toast from "react-hot-toast";
 import Loader from "@/modules/Loader";
 
-const AddProfilePage = ({ edit, data }) => {
-  const [profile, setProfile] = useState(edit ? data : profileFields);
+const AddProfilePage = ({ edit, profileData }) => {
+  const [profile, setProfile] = useState(edit ? profileData : profileFields);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -64,6 +64,7 @@ const AddProfilePage = ({ edit, data }) => {
           ...profile,
           phone: p2e(profile.phone),
           price: p2e(profile.price),
+          id: profileData._id,
         }),
         headers: { "Content-Type": "application/json" },
       });

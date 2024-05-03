@@ -23,7 +23,7 @@ const EditProfile = async ({ params }) => {
     return toast.error("شما مجاز به دسترسی به این آگهی نیستید");
 
   return (
-    <AddProfilePage edit={true} data={JSON.parse(JSON.stringify(profile))} />
+    <AddProfilePage edit={true} profileData={JSON.parse(JSON.stringify(profile))} />
   );
 };
 

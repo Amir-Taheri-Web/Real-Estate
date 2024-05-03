@@ -1,7 +1,8 @@
 import { categoriesIcons } from "@/constants/categories";
 import { e2p, sp } from "@/utils/convert";
-import { RiShareFill } from "react-icons/ri";
 import styles from "@/styles/ProfileDetailsPage.module.css";
+import ShareButton from "@/modules/ShareButton";
+import { profileIcons } from "@/constants/profile";
 
 const ProfileDetailsPage = ({ profile }) => {
   const {
@@ -16,6 +17,9 @@ const ProfileDetailsPage = ({ profile }) => {
     amenities,
     rules,
   } = profile;
+
+  const { locationIcon, phoneIcon, priceIcon, realEstateIcon, dateIcon } =
+    profileIcons;
 
   return (
     <div className={styles.container}>
@@ -50,34 +54,31 @@ const ProfileDetailsPage = ({ profile }) => {
 
       <div className={styles.details}>
         <p>
-          <span>شهر: </span>
+          <span>{locationIcon}شهر: </span>
           {location}
         </p>
 
         <p>
-          <span>بنگاه: </span>
+          <span>{realEstateIcon}بنگاه: </span>
           {realEstate}
         </p>
 
         <p>
-          <span>شماره تماس: </span>
+          <span>{phoneIcon}شماره تماس: </span>
           {e2p(phone)}
         </p>
 
         <p>
-          <span>قیمت: </span>
+          <span>{priceIcon}قیمت: </span>
           {sp(price)}
         </p>
 
         <p>
-          <span>تاریخ ساخت: </span>
+          <span>{dateIcon}تاریخ ساخت: </span>
           {new Date(constructionDate).toLocaleDateString("fa-IR")}
         </p>
 
-        <button type="button">
-          <RiShareFill />
-          اشتراک گذاری
-        </button>
+        <ShareButton />
       </div>
     </div>
   );

@@ -26,11 +26,20 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px var(--color-shadow);
+  background: var(--color-white);
+  background: linear-gradient(
+    122deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 236, 229, 1) 100%
+  );
 }
 
 .content div p {
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 2;
   color: var(--color-text);
 }
 
@@ -48,21 +57,37 @@
 .details {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  background-color: var(--color-white);
-  padding: 2rem;
   border-radius: 20px;
   height: fit-content;
-  width: fit-content;
-  width: -webkit-fill-available;
+  box-shadow: 3px 3px 10px var(--color-shadow);
+  padding: 1rem;
+  background: var(--color-white);
+  background: linear-gradient(
+    122deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 236, 229, 1) 100%
+  );
 }
 
 .details p {
+  width: 20rem;
   font-size: 1.1rem;
   color: var(--color-text);
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.details p:nth-child(2n) {
+  background-color: var(--color-shadow);
 }
 
 .details p span {
-    color: var(--color4) !important;
-    font-weight: 400;
+  color: var(--color4) !important;
+  font-weight: 400;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.3rem;
 }

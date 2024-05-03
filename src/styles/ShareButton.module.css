@@ -1,0 +1,17 @@
+.button {
+  font-size: 1.1rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-link);
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  margin-top: 3rem;
+}
+
+.button:hover {
+  color: var(--color3);
+}

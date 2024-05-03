@@ -1,6 +1,8 @@
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FaCalendar } from "react-icons/fa";
 import { FaMoneyBillWave } from "react-icons/fa";
+import { MdRealEstateAgent } from "react-icons/md";
+import { FaPhone } from "react-icons/fa";
 
 const profileFields = {
   title: "",
@@ -28,6 +30,8 @@ const profileIcons = {
   locationIcon: <FaMapLocationDot />,
   dateIcon: <FaCalendar />,
   priceIcon: <FaMoneyBillWave />,
+  realEstateIcon: <MdRealEstateAgent />,
+  phoneIcon: <FaPhone />,
 };
 
 export { profileStrings, profileFields, profileIcons };

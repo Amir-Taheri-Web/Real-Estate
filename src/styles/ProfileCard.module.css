@@ -1,5 +1,4 @@
 .container {
-  background-color: var(--color-white);
   padding: 1rem 2rem;
   box-shadow: 3px 3px 10px var(--color-shadow);
   border-radius: 20px;
@@ -7,6 +6,12 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 20rem;
+  background: var(--color-white);
+  background: linear-gradient(
+    122deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 236, 229, 1) 100%
+  );
 }
 
 .container > div {

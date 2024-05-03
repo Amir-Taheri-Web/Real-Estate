@@ -36,3 +36,7 @@
   color: var(--color-red);
   font-size: 1.7rem !important;
 }
+
+.buttons button:last-of-type:disabled {
+  opacity: 0.5;
+}

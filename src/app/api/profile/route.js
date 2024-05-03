@@ -101,7 +101,7 @@ const POST = async (req) => {
   } catch (error) {
     console.log(error);
 
-    NextResponse.json({
+    return NextResponse.json({
       code: 500,
       status: "failure",
       message: "مشکلی در اتصال به دیتابیس به وجود آمده",
@@ -182,6 +182,13 @@ const PATCH = async (req) => {
 
     const profile = await Profile.findOne({ _id: id });
 
+    if (!profile.userId.equals(user._id))
+      return NextResponse.json({
+        code: 403,
+        status: "failure",
+        message: "شما اجازه دسترسی به این آگهی را ندارید",
+      });
+
     profile.title = title;
     profile.description = description;
     profile.location = location;
@@ -202,7 +209,7 @@ const PATCH = async (req) => {
   } catch (error) {
     console.log(error);
 
-    NextResponse.json({
+    return NextResponse.json({
       code: 500,
       status: "failure",
       message: "مشکلی در اتصال به دیتابیس به وجود آمده",

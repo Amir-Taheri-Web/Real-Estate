@@ -65,3 +65,7 @@
   display: flex;
   gap: 6rem;
 }
+
+.wrapper > div {
+  flex: 1;
+}

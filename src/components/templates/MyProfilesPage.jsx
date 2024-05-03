@@ -4,6 +4,7 @@ import DashboardCard from "@/modules/DashboardCard";
 import connectDB from "@/utils/connectDB";
 import { getServerSession } from "next-auth";
 import toast from "react-hot-toast";
+import styles from "@/styles/MyProfilesPage.module.css";
 
 const MyProfilesPage = async () => {
   await connectDB();
@@ -27,7 +28,7 @@ const MyProfilesPage = async () => {
   if (!user) return toast.error("شما مجاز به دسترسی به این بخش نیستید");
 
   return (
-    <div>
+    <div className={styles.container}>
       {user.profiles.map((profile) => (
         <DashboardCard key={profile._id} profile={profile} />
       ))}

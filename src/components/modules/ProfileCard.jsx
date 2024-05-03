@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "@/styles/ProfileCard.module.css";
 
 const ProfileCard = ({
-  profile: { title, price, location, category, constructionDate },
+  profile: { title, price, location, category, constructionDate, _id },
 }) => {
   const { locationIcon, dateIcon, priceIcon } = profileIcons;
 
@@ -32,7 +32,7 @@ const ProfileCard = ({
         </p>
       </div>
 
-      <Link href={""}>مشاهده جزئیات...</Link>
+      <Link href={`/profiles/${_id}`}>مشاهده جزئیات...</Link>
     </div>
   );
 };

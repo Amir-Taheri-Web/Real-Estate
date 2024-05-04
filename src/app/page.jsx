@@ -1,5 +1,7 @@
+import HomePage from "@/templates/HomePage";
+
 const Home = () => {
-  return <div>main page</div>;
+  return <HomePage />;
 };
 
 export default Home;

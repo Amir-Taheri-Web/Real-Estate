@@ -1,9 +1,10 @@
 import DropDown from "@/modules/DropDown";
 import ProfileCard from "@/modules/ProfileCard";
+import styles from "@/styles/ProfilesPage.module.css";
 
 const ProfilesPage = ({ profiles }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <DropDown />
 
       <ul>

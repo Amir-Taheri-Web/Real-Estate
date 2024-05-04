@@ -1,19 +1,32 @@
 "use client";
 
 import Link from "next/link";
+import styles from "@/styles/DropDown.module.css";
+import { useState } from "react";
+import { AiOutlineCaretLeft } from "react-icons/ai";
+import { categoriesIcons } from "@/constants/categories";
 
 const DropDown = () => {
-  return (
-    <div>
-      <button type="button">دسته بندی</button>
+  const [isOpen, setIsOpen] = useState(false);
 
-      <ul>
+  return (
+    <div className={styles.container}>
+      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+        دسته بندی:
+        <AiOutlineCaretLeft className={isOpen ? styles.buttonOpen : null} />
+      </button>
+
+      <ul
+        className={isOpen ? styles.open : styles.close}
+        onClick={() => setIsOpen(false)}
+      >
         <li>
-          <Link href="/profiles">همه</Link>
+          <Link href="/profiles">{categoriesIcons.all}همه</Link>
         </li>
 
         <li>
           <Link href={{ pathname: "/profiles", query: { category: "villa" } }}>
+            {categoriesIcons.villa}
             ویلا
           </Link>
         </li>
@@ -22,18 +35,21 @@ const DropDown = () => {
           <Link
             href={{ pathname: "/profiles", query: { category: "apartment" } }}
           >
+            {categoriesIcons.apartment}
             آپارتمان
           </Link>
         </li>
 
         <li>
           <Link href={{ pathname: "/profiles", query: { category: "store" } }}>
+            {categoriesIcons.store}
             مغازه
           </Link>
         </li>
 
         <li>
           <Link href={{ pathname: "/profiles", query: { category: "office" } }}>
+            {categoriesIcons.office}
             دفتر
           </Link>
         </li>

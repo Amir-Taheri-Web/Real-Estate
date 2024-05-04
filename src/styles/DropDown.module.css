@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 200px;
+  background-color: var(--color-white);
+  padding: 1rem;
+  border-radius: 30px;
+  position: absolute;
+  box-shadow: 3px 3px 10px var(--color-shadow);
+}
+
+.container button {
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: none;
+  color: var(--color3);
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.buttonOpen {
+  transform: rotate(-90deg);
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container ul li {
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.container ul li:last-of-type {
+  border-bottom: none;
+}
+
+.container ul li a {
+  display: inline-block;
+  width: 100%;
+  color: var(--color4);
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.open {
+  display: flex !important;
+}
+
+.close {
+  display: none !important;
+}

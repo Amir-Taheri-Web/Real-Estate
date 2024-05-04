@@ -21,6 +21,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-multi-date-picker": "^4.4.1",
     "react-slick": "^0.30.2",
+    "sharp": "^0.33.3",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

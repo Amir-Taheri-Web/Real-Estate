@@ -54,6 +54,7 @@ const POST = async (req) => {
       firstName,
       lastName,
       email,
+      role: "USER",
       password: hashedPassword,
     });
     console.log(newUser);

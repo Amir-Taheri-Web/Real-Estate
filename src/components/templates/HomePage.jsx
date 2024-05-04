@@ -29,7 +29,7 @@ const HomePage = async () => {
       <ul className={styles.categories}>
         {Object.keys(categories).map((category, index) => (
           <li key={index}>
-            <Link href="">
+            <Link href={`/profiles?category=${category}`}>
               <Image
                 src={`/images/${category}.jpg`}
                 width={1920}

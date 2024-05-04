@@ -1,6 +1,6 @@
 import { ThreeDots } from "react-loader-spinner";
 
-const Loader = ({ color, width, height }) => {
+const Loader = ({ color, width, height, parentHeight }) => {
   return (
     <div>
       <ThreeDots
@@ -12,9 +12,10 @@ const Loader = ({ color, width, height }) => {
         ariaLabel="three-dots-loading"
         wrapperStyle={{
           display: "flex",
-          alignItems: "start",
+          alignItems: "center",
           justifyContent: "center",
           width: "100%",
+          height: parentHeight || "auto",
         }}
       />
     </div>

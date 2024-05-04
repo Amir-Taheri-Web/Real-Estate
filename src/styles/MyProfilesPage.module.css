@@ -5,3 +5,12 @@
   gap: 3rem;
   width: 100%;
 }
+
+.container > p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  background-color: var(--color3);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+}

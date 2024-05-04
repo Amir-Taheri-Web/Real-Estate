@@ -83,7 +83,11 @@ const SignInPage = () => {
           </div>
         </div>
 
-        {isLoading ? <Loader /> : <button type="submit">ورود</button>}
+        {isLoading ? (
+          <Loader parentHeight="43px" />
+        ) : (
+          <button type="submit">ورود</button>
+        )}
       </form>
 
       <p>

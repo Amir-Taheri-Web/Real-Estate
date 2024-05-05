@@ -5,6 +5,10 @@ import connectDB from "@/utils/connectDB";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
+export const metadata = {
+  title: "املاک | داشبورد",
+};
+
 const DashboardLayout = async ({ children }) => {
   await connectDB();
 

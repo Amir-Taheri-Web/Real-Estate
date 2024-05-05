@@ -5,7 +5,7 @@ import connectDB from "@/utils/connectDB";
 const Profiles = async ({ searchParams }) => {
   await connectDB();
 
-  const profiles = await Profile.find().select("-userId");
+  const profiles = await Profile.find({ published: true }).select("-userId");
 
   const filteredProfiles = searchParams.category
     ? profiles.filter((profile) => profile.category === searchParams.category)

@@ -47,6 +47,12 @@ const profileSchema = new Schema(
 
     rules: [String],
 
+    published: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User",

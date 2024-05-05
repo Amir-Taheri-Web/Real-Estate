@@ -22,7 +22,8 @@
     "react-multi-date-picker": "^4.4.1",
     "react-slick": "^0.30.2",
     "sharp": "^0.33.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "eslint": "^8",

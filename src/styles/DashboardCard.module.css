@@ -40,3 +40,14 @@
 .buttons button:last-of-type:disabled {
   opacity: 0.5;
 }
+
+.status {
+  align-self: center;
+  margin-right: 2rem;
+}
+
+.status p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color4);
+}

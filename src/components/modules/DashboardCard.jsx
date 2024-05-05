@@ -1,5 +1,3 @@
-"use client";
-
 import ProfileCard from "./ProfileCard";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
@@ -51,6 +49,10 @@ const DashboardCard = ({ profile }) => {
         <button type="button" onClick={deleteHandler} disabled={isLoading}>
           <MdDeleteForever />
         </button>
+      </div>
+
+      <div className={styles.status}>
+        <p>{profile.published ? "منتشر شده" : "در صف انتشار..."}</p>
       </div>
     </div>
   );

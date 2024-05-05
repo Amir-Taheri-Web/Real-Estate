@@ -18,6 +18,7 @@ const DashboardLayout = async ({ children }) => {
       email={user.email}
       firstName={user.firstName}
       lastName={user.lastName}
+      role={user.role}
     >
       {children}
     </DashboardSideBar>

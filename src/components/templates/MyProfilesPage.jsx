@@ -1,40 +1,32 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import User from "@/models/User";
+"use client";
+
 import DashboardCard from "@/modules/DashboardCard";
-import connectDB from "@/utils/connectDB";
-import { getServerSession } from "next-auth";
-import toast from "react-hot-toast";
+import Loader from "@/modules/Loader";
 import styles from "@/styles/MyProfilesPage.module.css";
+import toast from "react-hot-toast";
+import useSWR from "swr";
 
-const MyProfilesPage = async () => {
-  await connectDB();
+const MyProfilesPage = () => {
+  const fetchProfiles = async (url) => {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  };
 
-  const session = await getServerSession(authOptions);
+  const { data, error, isLoading } = useSWR(
+    "/api/profiles/my-profiles",
+    fetchProfiles
+  );
 
-  if (!session) return toast.error("لطفا وارد حساب کاربری خود شوید");
-
-  const [user] = await User.aggregate([
-    { $match: { email: session.user.email } },
-    {
-      $lookup: {
-        from: "profiles",
-        foreignField: "userId",
-        localField: "_id",
-        as: "profiles",
-      },
-    },
-  ]);
-
-  if (!user) return toast.error("شما مجاز به دسترسی به این بخش نیستید");
+  if (error) toast.error("مشکلی پیش آمده. دوباره امتحان کنید");
+  if (data?.status === "failure") toast.error(data.message);
+  if (isLoading) return <Loader />;
 
   return (
     <div className={styles.container}>
-      {user.profiles.length ? (
-        user.profiles.map((profile) => (
-          <DashboardCard
-            key={profile._id}
-            profile={JSON.parse(JSON.stringify(profile))}
-          />
+      {data?.user.profiles.length ? (
+        data?.user.profiles.map((profile) => (
+          <DashboardCard key={profile._id} profile={profile} />
         ))
       ) : (
         <p>آگهی برای نمایش وجود ندارد</p>

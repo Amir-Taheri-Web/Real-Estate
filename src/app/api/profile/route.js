@@ -199,6 +199,7 @@ const PATCH = async (req) => {
     profile.constructionDate = constructionDate;
     profile.amenities = amenities;
     profile.rules = rules;
+    profile.published = false;
     profile.save();
 
     return NextResponse.json({

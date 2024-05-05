@@ -13,9 +13,9 @@ const MyProfilesPage = () => {
     return data;
   };
 
-  const { data, error, isLoading } = useSWR(
+  const { data, error, isLoading, mutate } = useSWR(
     "/api/profiles/my-profiles",
-    fetchProfiles
+    fetchProfiles,
   );
 
   if (error) toast.error("مشکلی پیش آمده. دوباره امتحان کنید");
@@ -26,7 +26,7 @@ const MyProfilesPage = () => {
     <div className={styles.container}>
       {data?.user.profiles.length ? (
         data?.user.profiles.map((profile) => (
-          <DashboardCard key={profile._id} profile={profile} />
+          <DashboardCard key={profile._id} profile={profile} mutate={mutate} />
         ))
       ) : (
         <p>آگهی برای نمایش وجود ندارد</p>

@@ -1,12 +1,10 @@
 import ProfileCard from "@/modules/ProfileCard";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import styles from "@/styles/AdminCard.module.css";
 
-const AdminCard = ({ profile }) => {
+const AdminCard = ({ profile, mutate }) => {
   const [isLoading, setIsLoading] = useState(false);
-
-  const router = useRouter();
 
   const publishHandler = async (id) => {
     setIsLoading(true);
@@ -22,7 +20,7 @@ const AdminCard = ({ profile }) => {
 
       if (data.status === "success") {
         toast.success(data.message);
-        router.refresh();
+        mutate();
       }
 
       if (data.status === "failure") toast.error(data.message);
@@ -46,7 +44,7 @@ const AdminCard = ({ profile }) => {
 
       if (data.status === "success") {
         toast.success(data.message);
-        router.refresh();
+        mutate();
       }
 
       if (data.status === "failure") toast.error(data.message);
@@ -57,9 +55,9 @@ const AdminCard = ({ profile }) => {
   };
 
   return (
-    <div>
-      <div>
-        <ProfileCard profile={profile} />
+    <div className={styles.container}>
+      <ProfileCard profile={profile} />
+      <div className={styles.buttons}>
         <button
           type="button"
           disabled={isLoading}

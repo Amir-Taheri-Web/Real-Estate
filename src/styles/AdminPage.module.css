@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.container h2 {
+  font-size: 1.7rem;
+  color: var(--color3);
+}
+
+.noProfiles {
+  font-size: 1.3rem;
+  background-color: var(--color3);
+  font-weight: 400;
+  color: var(--color-white);
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-auto-rows: auto;
+  gap: 3rem;
+}

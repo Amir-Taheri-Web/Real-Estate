@@ -5,12 +5,9 @@ import styles from "@/styles/DashboardCard.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
 
-const DashboardCard = ({ profile }) => {
+const DashboardCard = ({ profile, mutate }) => {
   const [isLoading, setIsLoading] = useState(false);
-
-  const router = useRouter();
 
   const deleteHandler = async () => {
     setIsLoading(true);
@@ -26,7 +23,7 @@ const DashboardCard = ({ profile }) => {
 
       if (data.status === "success") {
         toast.success(data.message);
-        router.refresh();
+        mutate();
       }
 
       if (data.status === "failure") toast.error(data.message);

@@ -4,6 +4,7 @@ import AdminCard from "@/modules/AdminCard";
 import Loader from "@/modules/Loader";
 import toast from "react-hot-toast";
 import useSWR from "swr";
+import styles from "@/styles/AdminPage.module.css";
 
 const AdminPage = () => {
   const fetchProfiles = async (url) => {
@@ -12,7 +13,7 @@ const AdminPage = () => {
     return data;
   };
 
-  const { data, error, isLoading } = useSWR(
+  const { data, error, isLoading, mutate } = useSWR(
     "/api/profiles/unpublished",
     fetchProfiles
   );
@@ -21,17 +22,17 @@ const AdminPage = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>آگهی های منتشر نشده</h2>
 
       {!!data?.profiles.length ? (
-        <div>
+        <div className={styles.cards}>
           {data?.profiles.map((profile) => (
-            <AdminCard key={profile._id} profile={profile} />
+            <AdminCard key={profile._id} profile={profile} mutate={mutate} />
           ))}
         </div>
       ) : (
-        <p>آگهی برای انتشار وجود ندارد</p>
+        <p className={styles.noProfiles}>آگهی برای انتشار وجود ندارد</p>
       )}
     </div>
   );

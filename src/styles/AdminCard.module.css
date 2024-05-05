@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 30px;
+  border: 1px dashed var(--color4);
+}
+
+.buttons {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.buttons button {
+  background: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.buttons button:first-of-type {
+  color: var(--color-edit);
+}
+
+.buttons button:last-of-type {
+  color: var(--color-red);
+}
+
+.buttons button:disabled {
+  opacity: 0.5;
+}

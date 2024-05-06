@@ -9,12 +9,12 @@ const sitemap = async () => {
   const profiles = await res.json();
 
   const routes1 = staticRoutes.map((route) => ({
-    url: `http://localhost:3000/${route}`,
+    url: `${process.env.URL}/${route}`,
     lastModified: new Date().toString(),
   }));
 
   const routes2 = profiles.map((profile) => ({
-    url: `http://localhost:3000/profiles/${profile._id}`,
+    url: `${process.env.URL}/profiles/${profile._id}`,
     lastModified: new Date().toString(),
   }));
 

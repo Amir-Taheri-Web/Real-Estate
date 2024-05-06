@@ -68,6 +68,8 @@
 
 .wrapper button svg {
   font-size: 1.3rem;
+  width: 20px;
+  height: 20px;
 }
 
 .wrapper div {

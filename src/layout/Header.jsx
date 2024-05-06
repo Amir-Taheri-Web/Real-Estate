@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "@/styles/Header.module.css";
 import HeaderLogin from "@/modules/HeaderLogin";
+import BurgerMenu from "@/modules/BurgerMenu";
 
 const Header = async () => {
   return (
@@ -21,6 +22,10 @@ const Header = async () => {
         </ul>
 
         <HeaderLogin />
+
+        <div className={styles.menu}>
+          <BurgerMenu />
+        </div>
       </div>
     </header>
   );

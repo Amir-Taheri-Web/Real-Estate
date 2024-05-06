@@ -7,8 +7,34 @@
 .container > ul {
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-auto-rows: auto;
-  align-items: center;
   margin-top: 6rem;
+  justify-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container > ul {
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .container > ul li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container > ul {
+    grid-template-columns: 1fr;
+  }
 }

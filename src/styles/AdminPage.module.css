@@ -25,3 +25,16 @@
   grid-auto-rows: auto;
   gap: 3rem;
 }
+
+@media only screen and (max-width: 450px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    gap: 1rem;
+  }
+}

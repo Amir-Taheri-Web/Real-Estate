@@ -58,3 +58,9 @@
 .container a:hover {
   color: var(--color3);
 }
+
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 100%;
+  }
+}

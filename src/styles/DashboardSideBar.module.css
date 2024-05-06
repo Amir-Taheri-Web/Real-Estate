@@ -69,3 +69,19 @@
 .wrapper > div {
   flex: 1;
 }
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .container {
+    align-self: center;
+    width: 100%;
+  }
+
+  .links a:hover {
+    transform: scale(1);
+  }
+}

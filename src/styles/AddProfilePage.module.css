@@ -32,3 +32,9 @@
 .container form > button:hover {
   background-color: var(--color3);
 }
+
+@media only screen and (max-width: 650px) {
+  .container input {
+    width: 100%;
+  }
+}

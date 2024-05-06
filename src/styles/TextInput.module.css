@@ -26,3 +26,14 @@
   resize: vertical;
   height: 100px;
 }
+
+@media only screen and (max-width: 650px) {
+  .container input,
+  .container textarea {
+    width: 100%;
+  }
+
+  .container {
+    gap: 1rem;
+  }
+}

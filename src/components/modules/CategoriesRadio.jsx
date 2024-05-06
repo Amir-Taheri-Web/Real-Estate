@@ -11,7 +11,7 @@ const CategoriesRadio = ({ profile, setProfile }) => {
       <label htmlFor="categories">دسته بندی(اجباری):</label>
       <div>
         {Object.keys(categories).map((item) => (
-          <div key={item}>
+          <div key={item} className={styles.wrapper}>
             <input
               type="radio"
               checked={profile.category === item}

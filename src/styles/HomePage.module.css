@@ -53,3 +53,20 @@
   color: var(--color3);
   margin-top: 2rem;
 }
+
+.sliderItem {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1300px) {
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    gap: 10rem;
+  }
+}

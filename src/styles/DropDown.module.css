@@ -57,8 +57,16 @@
   display: none !important;
 }
 
+.category {
+  color: var(--color2);
+}
+
 @media only screen and (max-width: 900px) {
   .container {
     padding: 0.5rem 1rem;
+  }
+
+  .container button {
+    height: 30px;
   }
 }

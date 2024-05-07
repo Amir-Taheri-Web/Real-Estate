@@ -4,9 +4,9 @@ import Link from "next/link";
 import styles from "@/styles/DropDown.module.css";
 import { useState } from "react";
 import { AiOutlineCaretLeft } from "react-icons/ai";
-import { categoriesIcons } from "@/constants/categories";
+import { categories, categoriesIcons } from "@/constants/categories";
 
-const DropDown = () => {
+const DropDown = ({ category }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -14,6 +14,9 @@ const DropDown = () => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         دسته بندی:
         <AiOutlineCaretLeft className={isOpen ? styles.buttonOpen : null} />
+        <span className={styles.category}>
+          {category ? categories[category] : "همه"}
+        </span>
       </button>
 
       <ul

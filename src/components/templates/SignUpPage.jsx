@@ -27,8 +27,10 @@ const SignUpPage = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    if (password.trim() !== rePassword.trim())
+    if (password.trim() !== rePassword.trim()) {
+      setIsLoading(false);
       return toast.error("رمز عبور با تکرار رمز عبور برابر نیست");
+    }
 
     const res = await fetch("/api/auth/signup", {
       method: "POST",

@@ -194,3 +194,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: none;
   display: none;
 }
+
+@media only screen and (max-width: 500px) {
+  .bm-menu-wrap {
+    width: 60% !important;
+  }
+}

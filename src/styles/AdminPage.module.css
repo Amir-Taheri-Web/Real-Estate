@@ -26,15 +26,25 @@
   gap: 3rem;
 }
 
+@media only screen and (max-width: 1000px) {
+  .container {
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .noProfiles {
+    font-size: 1rem;
+  }
+
+  .container h2 {
+    font-size: 1.1rem;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .cards {
     display: flex;
     flex-direction: column;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .container {
-    gap: 1rem;
   }
 }

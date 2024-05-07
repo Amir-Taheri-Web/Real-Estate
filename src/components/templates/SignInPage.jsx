@@ -31,6 +31,7 @@ const SignInPage = () => {
     });
 
     setIsLoading(false);
+    console.log(res)
 
     if (res.error) {
       toast.error(res.error);

@@ -16,7 +16,7 @@ const Profiles = async ({ searchParams }) => {
     ? profiles.filter((profile) => profile.category === searchParams.category)
     : profiles;
 
-  return <ProfilesPage profiles={filteredProfiles} />;
+  return <ProfilesPage profiles={filteredProfiles} category={searchParams.category || ""} />;
 };
 
 export default Profiles;
